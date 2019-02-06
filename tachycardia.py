@@ -6,8 +6,15 @@ def is_tachycardic(s):
     s = s.lower()  # Convert string to completely lowercase
     s = s.lstrip()  # Remove all leading spaces
     s = s.rstrip()  # Remove all trailing spaces
-    if s == "tachycardic":
+    if s == "tachycardic":  # Returns tachycardic per specs of assignment
         R = True
-    else:
-        R = False
+    else:  # Extra credit: Check for a close string match
+        # Used fuzzywuzzy package to calculate Levenshtein distance
+        from fuzzywuzzy import fuzz
+        from fuzzywuzzy import process
+        n = fuzz.ratio(s, "tachycardic")
+        if n >= 82:  # Ratio determined by trial and error
+            R = True
+        else:
+            R = False
     return(R)
