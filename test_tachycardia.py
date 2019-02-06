@@ -6,7 +6,10 @@ import pytest
                                      ("TAchYcARDIC", True),
                                      ("Tachycardic ", True),
                                      ("Bradycardic", False),
-                                     ("  Tachycardic", True), ])
+                                     ("  Tachycardic", True),
+                                     ("Tachycard1c", True),
+                                     ("Techycordic", True),
+                                     ("tchycrdic", True), ])
 def test_tachycardia(s, soln):
     from tachycardia import is_tachycardic
     ans = is_tachycardic(s)
